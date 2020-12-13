@@ -1,0 +1,35 @@
+.site {
+	display: grid;
+	grid-template-columns: auto ($size__site-sidebar);
+	grid-template-areas:
+		"header header"
+		"main sidebar"
+		"footer footer";
+	border: 1px solid transparent;
+	border-radius: 8px;
+	margin: 0 auto;
+	max-width: 1152px;
+	min-width: 625px;
+	padding: 15px;
+	background-color: $color__background-site;
+	box-sizing: content-box;
+}
+
+.site-header {
+	grid-area: header;
+}
+
+.site-main {
+	grid-area: main;
+	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+}
+
+.widget-area {
+	grid-area: sidebar;
+}
+
+.site-footer {
+	grid-area: footer;
+}
+
+@import "no-sidebar";
